@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Car Rental Booking</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <h1>Car Rental Booking</h1>
+        <p>Welcome, User!</p> <!-- Display the username or user's name here -->
+        <a href="logout.html">Logout</a> <!-- Link to logout page -->
+    </header>
+    <div class="booking-form">
+        <h2>Book a Car</h2>
+        <form action="confirm_booking.html" method="post">
+            <label for="carModel">Select Car Model:</label>
+            <select name="carModel" id="carModel">
+                <option value="car1">Car Model 1</option>
+                <option value="car2">Car Model 2</option>
+                <!-- Add more options for different car models -->
+            </select>
+            <label for="pickupDate">Pickup Date:</label>
+            <input type="date" id="pickupDate" name="pickupDate" required>
+            <label for="returnDate">Return Date:</label>
+            <input type="date" id="returnDate" name="returnDate" required>
+            <button type="submit">Book Now</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

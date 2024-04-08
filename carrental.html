@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+<link rel="icon" href="https://cdn-icons-png.flaticon.com/128/14250/14250461.png" type="image/x-icon">
+<title>Car Rental Management System</title>
+</head>
+<body>
+<div class="wrapper">
+    <nav class="nav">
+        <div class="site-logo">
+            <img src="https://img.icons8.com/?size=60&id=61242&format=png" alt="logo">
+        </div>
+        <div class="nav-logo">
+            <p>Car Rental Management System</p>
+        </div>
+        <div class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="#" class="link active">Home</a></li>
+                <li><a href="#Cars" class="link active">Cars</a></li>
+                <li><a href="#Services" class="link active">Services</a></li>
+                <li><a href="#Contacts" class="link active">Contacts</a></li>
+            </ul>
+        </div>
+        <div class="nav-button">
+            <button class="btn white-btn" id="loginBtn" onclick="login()">
+                Sign In
+            </button>
+            <button class="btn" id="registerBtn" onclick="register()">
+                Sign Up
+            </button>
+        </div>
+        <div class="nav-menu-btn">
+            <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+        </div>
+    </nav>
+
+    <div class="form-box">
+        <div class="login-container" id="login">
+            <div class="top">
+                <span
+                    >Don't have an account?
+                    <a href="#" onclick="register()">Sign Up</a></span
+                >
+                <header>Login</header>
+            </div>
+            <div class="input-box">
+                <input
+                    type="text"
+                    id="loginUsername"
+                    class="input-field"
+                    placeholder="Username or Email"
+                />
+                <i class="bx bx-user"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="loginPassword" class="input-field" placeholder="Password" />
+                <i class="bx bx-lock-alt"></i>
+            </div>
+            <div class="input-box">
+                <input type="submit" onclick="login()" id="loginForm" class="submit" value="Sign In" />
+            </div>
+            <div class="two-col">
+                <div class="one">
+                    <input type="checkbox" id="login-check" />
+                    <label for="login-check"> Remember Me</label>
+                </div>
+                <div class="two">
+                    <label><a href="#">Forgot password?</a></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="register-container" id="register">
+            <div class="top">
+                <span
+                    >Have an account? <a href="booking.html" onclick="login()">Login</a></span
+                >
+                <header>Sign Up</header>
+            </div>
+            <div class="two-forms">
+                <div class="input-box">
+                    <input type="text" id="firstName" class="input-field" placeholder="Firstname" />
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" id="lastName" class="input-field" placeholder="Lastname" />
+                    <i class="bx bx-user"></i>
+                </div>
+            </div>
+            <div class="input-box">
+                <input type="text" id="email" class="input-field" placeholder="Email" />
+                <i class="bx bx-envelope"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="password" class="input-field" placeholder="Password" />
+                <i class="bx bx-lock-alt"></i>
+            </div>
+            <div class="input-box">
+                <input type="submit" onclick="register()" id="registerForm" class="submit" value="Register" />
+            </div>
+            <div class="two-col">
+                <div class="one">
+                    <input type="checkbox" id="register-check" />
+                    <label for="register-check"> Remember Me</label>
+                </div>
+                <div class="two">
+                    <label><a href="#">Terms & conditions</a></label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="car-section" id="Cars">
+    <p class="page-header">Car Rental Management System</p>
+    <div class="car-list">
+        <div class="car">
+            <img src="car1.jpg" alt="Car 1">
+            <h3>Car Model 1</h3>
+            <p>Description of Car Model 1</p>
+            <button class="btn rent-btn">Rent Now</button>
+        </div>
+        <div class="car">
+            <img src="car2.jpg" alt="Car 2">
+            <h3>Car Model 2</h3>
+            <p>Description of Car Model 2</p>
+            <button class="btn rent-btn">Rent Now</button>
+        </div>
+        <!-- Add more car listings here -->
+    </div>
+</div>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <p>&copy; 2024 Car Rental Management System. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function myMenuFunction() {
+        var i = document.getElementById("navMenu");
+        if (i.className === "nav-menu") {
+            i.className += " responsive";
+        } else {
+            i.className = "nav-menu";
+        }
+    }
+
+    function login() {
+    var usernameInput = document.getElementById("loginUsername");
+    var passwordInput = document.getElementById("loginPassword");
+
+    // Validation
+    if (usernameInput.value.trim() === "") {
+        alert("Please enter your username or email");
+        return false;
+    }
+
+    if (passwordInput.value.trim() === "") {
+        alert("Please enter your password");
+        return false;
+    }
+
+    // Here you would typically make an AJAX request to your server to authenticate the user
+    // For demonstration, let's just display a success message
+    alert("Login successful! Redirecting...");
+    // Replace the next line with actual redirection logic if needed
+    window.location.href = "booking.html";
+}
+
+function register() {
+    var firstNameInput = document.getElementById("firstName");
+    var lastNameInput = document.getElementById("lastName");
+    var emailInput = document.getElementById("email");
+    var passwordInput = document.getElementById("password");
+
+    // Validation
+    if (firstNameInput.value.trim() === "") {
+        alert("Please enter your first name");
+        return false;
+    }
+
+    if (lastNameInput.value.trim() === "") {
+        alert("Please enter your last name");
+        return false;
+    }
+
+    if (emailInput.value.trim() === "") {
+        alert("Please enter your email");
+        return false;
+    } else if (!isValidEmail(emailInput.value.trim())) {
+        alert("Please enter a valid email address");
+        return false;
+    }
+
+    if (passwordInput.value.trim() === "") {
+        alert("Please enter your password");
+        return false;
+    } else if (!isValidPassword(passwordInput.value.trim())) {
+        alert("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character");
+        return false;
+    }
+
+    // Here you would typically make an AJAX request to your server to register the user
+    // For demonstration, let's just display a success message
+    alert("Registration successful! You can now sign in with your credentials.");
+    // Replace the next line with actual redirection logic if needed
+    window.location.href = "login.html";
+}
+
+function isValidEmail(email) {
+    // Regular expression for email validation
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function isValidPassword(password) {
+    // Regular expression for password validation
+    var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return passwordRegex.test(password);
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.nav {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.nav-logo p {
+    font-size: 1.5rem;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav-menu ul li {
+    margin-right: 20px;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-menu-btn {
+    display: none;
+    cursor: pointer;
+}
+
+.form-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.login-container,
+.register-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.login-container header,
+.register-container header {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.input-box {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-box i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+.submit {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.two-col {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.two-col label {
+    font-size: 0.9rem;
+}
+
+.car-section {
+    padding: 20px;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+.page-header {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.car-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+.car {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.car img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.car h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.car p {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.rent-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.rent-btn:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.footer-links li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        padding: 10px 0;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .nav-menu.responsive {
+        display: flex;
+    }
+
+    .nav-menu.responsive ul {
+        flex-direction: column;
+    }
+
+    .nav-menu.responsive ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .nav-menu-btn {
+        display: block;
+    }
+
+    .form-box {
+        flex-direction: column;
+    }
+
+    .login-container,
+    .register-container {
+        width: 100%;
+    }
+}
